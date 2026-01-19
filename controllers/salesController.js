@@ -281,7 +281,7 @@ export const getSales = async (req, res) => {
         outstanding,
         users.name as created_by_name
       FROM sales
-      LEFT JOIN Users on sales.created_by = users.id
+      LEFT JOIN users on sales.created_by = users.id
       WHERE sales.company_id = ? AND sales.delete_status = 0
       ORDER BY sales.id DESC
       LIMIT ? OFFSET ?
