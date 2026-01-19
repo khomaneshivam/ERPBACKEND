@@ -243,7 +243,7 @@ export const getPurchases = async (req, res) => {
         payment_type,
         users.name as created_by_name 
        FROM purchases
-       LEFT JOIN USERS on purchases.created_by = users.id
+       LEFT JOIN users on purchases.created_by = users.id
        WHERE purchases.company_id = ? AND purchases.delete_status = 0
        ORDER BY purchase_date_raw DESC, purchases.id DESC
        LIMIT ? OFFSET ?`,
